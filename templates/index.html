@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fertilizer Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #c1dae0, #a6b0bc);
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        input, select {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #ff9800;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #e68900;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Fertilizer Prediction System</h2>
+        <form action="/predict" method="post">
+            <input type="text" name="temp" placeholder="Temperature">
+            <input type="text" name="humi" placeholder="Humidity">
+            <input type="text" name="mois" placeholder="Moisture">
+            <select name="soil">
+                <option value="Clayey">Clayey</option>
+                <option value="Loamy">Loamy</option>
+                <option value="Black">Black</option>
+                <option value="Red">Red</option>
+                <option value="Sandy">Sandy</option>
+            </select>
+            <select name="crop">
+                <option value="Barley">Barley</option>
+                <option value="Cotton">Cotton</option>
+                <option value="Ground Nuts">Ground Nuts</option>
+                <option value="Maize">Maize</option>
+                <option value="Millets">Millets</option>
+                <option value="Oil seeds">Oil seeds</option>
+                <option value="Paddy">Paddy</option>
+                <option value="Pomegranate">Pomegranate</option>
+                <option value="Pulses">Pulses</option>
+                <option value="Rice">Rice</option>
+                <option value="Sugarcane">Sugarcane</option>
+                <option value="Tobacco">Tobacco</option>
+                <option value="Wheat">Wheat</option>
+                <option value="Watermelon">Watermelon</option>
+                <option value="Coffee">Coffee</option>
+                <option value="Kidney Beans">Kidney Beans</option>
+                <option value="Orange">Orange</option>
+            </select>
+            <input type="text" name="nitro" placeholder="Nitrogen">
+            <input type="text" name="pota" placeholder="Potassium">
+            <input type="text" name="phosp" placeholder="Phosphorous">
+            <input type="submit" value="Predict">
+        </form>
+        {% if result %}
+            <h3>{{ result }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
