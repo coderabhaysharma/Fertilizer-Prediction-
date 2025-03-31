@@ -13,9 +13,8 @@ except:
     ferti = None  # If not needed, ignore
 
 # Define valid categories for encoding
-soil_types = ['Clayey', 'Loamy', 'Black', 'Red']
-crop_types = ['Rice', 'Wheat', 'Tobacco', 'Sugarcane', 'Pulses', 'Pomegranate', 'Paddy', 'Oil seeds', 'Millets']
-
+soil_types = ['Clayey', 'Loamy', 'Black', 'Red' ,'Sandy']
+crop_types = ['Rice', 'Wheat', 'Tobacco', 'Sugarcane', 'Pulses', 'Pomegranate', 'Paddy', 'Oil seeds', 'Millets','Oil seeds','Paddy','Kidney Beans','Coffee','Maize','Orange','Barley']
 @app.route('/')
 def home():
     return render_template('index.html')
