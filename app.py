@@ -3,6 +3,9 @@ import pickle
 import os
 app = Flask(__name__)
 
+# Enable CORS for all origins (adjust as needed)
+CORS(app, resources={r"/predict": {"origins": "*"}}, supports_credentials=True)
+
 # Load trained model
 model = pickle.load(open('classifier.pkl', 'rb'))
 
