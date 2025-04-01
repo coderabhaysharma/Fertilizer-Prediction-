@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template
 import pickle
 import os
+from flask_cors import CORS
 app = Flask(__name__)
 
 # Enable CORS for all origins (adjust as needed)
