@@ -79,10 +79,10 @@
 
 
 
-from flask import Flask, request, render_template, jsonify
+from flask import Flask, request, jsonify
 import pickle
 import os
-from flask_cors import CORS
+
 app = Flask(__name__)
 
 # Load trained model
@@ -100,7 +100,7 @@ crop_types = ['Rice', 'Wheat', 'Tobacco', 'Sugarcane', 'Pulses', 'Pomegranate', 
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return "Fertilizer Prediction API is running!"  # Remove HTML rendering for API usage
 
 @app.route('/predict', methods=['POST'])
 def predict():
