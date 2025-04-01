@@ -5,3 +5,4 @@ scipy
 pandas
 scikit-learn==1.2.2
 Cython
+flask-cors
